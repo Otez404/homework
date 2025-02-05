@@ -12,3 +12,6 @@ def mask_account_card(card_number: str) -> str:
     else:
         return get_mask_card_number(str_only_numbers)
 
+
+def get_date(date_format: str) -> str:
+    """Функция изменения формата даты"""
