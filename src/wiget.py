@@ -1,19 +1,20 @@
 import datetime as dt
 import re
-from typing import Any
+
 
 from masks import get_mask_account
 from masks import get_mask_card_number
 
 
-def mask_account_card(card_number: str) -> Any:
+def mask_account_card(card_number: str) -> str:
     """Функция маскировки как банковского счета, так и номера карты"""
     only_numbers = re.findall(r'\d+', card_number)
     str_only_numbers = ''.join(only_numbers)
+    name_card = ' '.join([num for num in card_number.split() if num.isalpha()])
     if 'Счет' in card_number:
-        return get_mask_account(str_only_numbers)
+        return f"{name_card}  {get_mask_account(str_only_numbers)}"
     else:
-        return get_mask_card_number(str_only_numbers)
+        return f"{name_card}  {get_mask_card_number(str_only_numbers)}"
 
 
 def get_date(date_format: str) -> str:
