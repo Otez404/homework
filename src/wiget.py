@@ -1,7 +1,6 @@
 import datetime as dt
 import re
 
-
 from masks import get_mask_account
 from masks import get_mask_card_number
 
