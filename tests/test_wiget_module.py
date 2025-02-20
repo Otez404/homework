@@ -1,7 +1,8 @@
 import pytest
 
-from src.wiget import mask_account_card
 from src.wiget import get_date
+from src.wiget import mask_account_card
+
 
 # проверка модуля wiget функции mask_account_card:
 @pytest.mark.parametrize('card_or_account_number,expected_result', [
@@ -13,6 +14,7 @@ from src.wiget import get_date
     ('Maestro 15968378685705199', 'Maestro Введен неверный номер карты')])
 def test_mask_account_card(card_or_account_number, expected_result):
     assert mask_account_card(card_or_account_number) == expected_result
+
 
 # проверка модуля get_date функции mask_account_card:
 @pytest.mark.parametrize('input_date,result', [
