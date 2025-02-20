@@ -25,6 +25,3 @@ def get_date(date_format: str) -> str:
     else:
         date_class_str = date_object.strftime('%d.%m.%Y')
         return date_class_str
-
-
-print(get_date('12.03.2025'))
