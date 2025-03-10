@@ -86,6 +86,10 @@ transactions = (
         }
     ]
 )
-usd_transactions = filter_by_currency(transactions, "USD")
-for _ in range(3):
-    print(next(usd_transactions))
+transactions_new = []
+usd_transactions = filter_by_currency(transactions_new, "USD")
+print(next(usd_transactions))
+def transaction_descriptions(transactions: list[dict[str, Any]]) -> Any:
+    for transaction in transactions:
+            yield transaction["description"]
+
